@@ -3,15 +3,10 @@
 # Copyright 2021 tea-take, koma280. All rights reserved.
 ###############################################################################
 import csv
-from retry import retry
 from bs4 import BeautifulSoup
-import urllib3
-import re
 import requests
 import time
 import pandas as pd
-from pandas import Series, DataFrame
-import matplotlib.pyplot as plt
 
 ##############################################################################
 # CSVファイルをDictionaryとして読み込む

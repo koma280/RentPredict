@@ -4,9 +4,6 @@
 ###############################################################################
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import altair as alt
 import utility as utl
 import urlgenerator
 from pred import Prediction
@@ -230,33 +227,3 @@ if buttonState:
     # 予測結果コントロール定義
     ##############################################################################
     st.table(df_disp)
-
-
-
-
-
-
-
-
-
-
-
-
-############################### テストコード ###################################
-#df = pd.read_csv('test_mod.csv')
-#st.dataframe(df, width=1000)
-
-#fig, ax = plt.subplots()
-#ax.hist(df['家賃'], bins=50)
-#st.pyplot(fig)
-
-#left, center, right = st.beta_columns(3)
-
-#c = alt.Chart(df).mark_circle().encode(x='面積', y='家賃', tooltip=['物件名', '家賃', '面積'])
-#left.altair_chart(c, use_container_width=True)
-
-#c = alt.Chart(df).mark_circle().encode(x='築年数', y='家賃', tooltip=['物件名', '家賃', '築年数'])
-#center.altair_chart(c, use_container_width=True)
-
-#c = alt.Chart(df).mark_circle().encode(x='徒歩', y='家賃', tooltip=['物件名', '家賃', '徒歩'])
-#right.altair_chart(c, use_container_width=True)
