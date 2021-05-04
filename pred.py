@@ -1,3 +1,7 @@
+###############################################################################
+# 予測関数
+# Copyright 2021 tea-take, koma280. All rights reserved.
+###############################################################################
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 import xgboost as xgb

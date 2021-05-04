@@ -1,3 +1,7 @@
+###############################################################################
+# メイン関数(streamlitで表示されるところ)
+# Copyright 2021 tea-take, koma280. All rights reserved.
+###############################################################################
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt

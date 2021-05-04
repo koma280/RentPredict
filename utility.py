@@ -1,3 +1,7 @@
+###############################################################################
+# ユーティリティと言う名の何でも関数
+# Copyright 2021 tea-take, koma280. All rights reserved.
+###############################################################################
 import csv
 from retry import retry
 from bs4 import BeautifulSoup
