@@ -223,7 +223,6 @@ if buttonState:
         df = utl.ModifyFormat(df)
 
         # 予測
-        pd.set_option("display.max_colwidth",100)
         df_disp = Prediction(df, include)
 
         ##############################################################################
@@ -232,4 +231,4 @@ if buttonState:
         if df_disp is None:
             st.warning('物件がありません')
         else:
-            st.table(df_disp)
+            st.dataframe(df_disp)
