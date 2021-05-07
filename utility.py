@@ -107,7 +107,11 @@ def ScrapingSuumo(urlList):
 
     # ページ内の物件情報を取得
     summary = soup.find("div",{'id':'js-bukkenList'})
-    m_prpty = summary.find_all("div",{'class':'cassetteitem'})
+
+    try:
+      m_prpty = summary.find_all("div",{'class':'cassetteitem'})
+    except:
+      return None
 
     for prp in m_prpty:
       # 物件名

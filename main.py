@@ -216,18 +216,20 @@ if buttonState:
 
     # スクレイピング
     df = utl.ScrapingSuumo(urlList)
-
-    # 前処理
-    df = utl.ModifyFormat(df)
-
-    # 予測
-    pd.set_option("display.max_colwidth",100)
-    df_disp = Prediction(df, include)
-
-    ##############################################################################
-    # 予測結果コントロール定義
-    ##############################################################################
-    if df_disp is None:
+    if df is None:
         st.warning('物件がありません')
     else:
-        st.table(df_disp)
+        # 前処理
+        df = utl.ModifyFormat(df)
+
+        # 予測
+        pd.set_option("display.max_colwidth",100)
+        df_disp = Prediction(df, include)
+
+        ##############################################################################
+        # 予測結果コントロール定義
+        ##############################################################################
+        if df_disp is None:
+            st.warning('物件がありません')
+        else:
+            st.table(df_disp)
