@@ -208,6 +208,7 @@ st.write('予測対象URLは、' + urlResult)
 buttonState = st.sidebar.button(
     '予測'
 )
+st.sidebar.write('予測には数秒かかります')
 
 if buttonState:
     # 選択項目から読み込み対象のURLを取得
