@@ -15,7 +15,7 @@ def Prediction(dataframe, model_flg):
         y = dataframe[['家賃']]
 
         # モデルをloadする
-        loaded_model = pickle.load(open("./model/xgb_model.pickle", "rb"))
+        loaded_model = pickle.load(open("./model/rf_model.pickle", "rb"))
 
     # 家賃と管理費
     else:
@@ -23,7 +23,7 @@ def Prediction(dataframe, model_flg):
         y = dataframe[['家賃と管理費']]
 
         # モデルをloadする
-        loaded_model = pickle.load(open("./model/xgb_model_add_manage.pickle", "rb"))
+        loaded_model = pickle.load(open("./model/rf_model_add_manage.pickle", "rb"))
 
     try:
         # 集計した新しいDataFrameを作成する
