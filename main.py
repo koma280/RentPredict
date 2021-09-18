@@ -229,7 +229,8 @@ if buttonState:
 
             # 予測
             #df_disp = Prediction(df, include)
-            df_disp = Prediction(df.to_html(escape=False))
+            df_disp = Prediction(df)
+            df_disps = df_disp.to_html(escape=False)
 
 
 
@@ -240,7 +241,7 @@ if buttonState:
                 st.warning('物件がありません')
             else:
                 st.success('成功しました')
-                st.write(df_disp)
+                st.write(df_disps)
                 #st.dataframe(df_disp)
                 st.write('物件一覧')
                 st.write(urlResult)
