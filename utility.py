@@ -97,8 +97,8 @@ def ScrapingSuumo(urlList):
   herf = ''
   URL = ''
   for url in urlList:
-    # 4秒待つ！！これ重要！！
-    time.sleep(3)
+    # 2秒待つ！！これ重要！！
+    time.sleep(2)
 
     # URLから情報を取得
     result = requests.get(url)
