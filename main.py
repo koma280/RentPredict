@@ -240,6 +240,7 @@ if buttonState:
                 st.warning('物件がありません')
             else:
                 st.success('成功しました')
-                st.dataframe(df_disp)
+                st.write(df_disp)
+                #st.dataframe(df_disp)
                 st.write('物件一覧')
                 st.write(urlResult)
