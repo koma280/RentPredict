@@ -237,5 +237,5 @@ if buttonState:
         if df_disp is None:
             st.warning('物件がありません')
         else:
-            st.markdown([物件一覧][urlResult])
+            st.markdown(['物件一覧'](urlResult))
             st.dataframe(df_disp)
