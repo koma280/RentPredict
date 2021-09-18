@@ -51,8 +51,7 @@ st.title('物件検索')
 st.header('使用目的')
 st.write('使用時点の物件情報を検索し、割安物件を検索する')
 st.header('使用方法')
-st.write('左側のメニューバーから検索条件を設定し「予測」を実施する')
-# st.header('予測対象URL')
+st.write('左側のメニューバーから検索条件を設定し「検索」を実施する')
 
 ##############################################################################
 # 管理費込み選択コントロール定義
@@ -206,16 +205,15 @@ urlgen.SetFloorPlan(mdlist)
 
 # URL作成
 urlResult = urlgen.Generate()
-# st.write(urlResult)
 
 ##############################################################################
 # 実行コントロール定義
 ##############################################################################
 buttonState = st.sidebar.button(
-    '予測'
+    '検索'
 )
 
-st.sidebar.write('※予測には約10秒かかります')
+st.sidebar.write('※検索には約10秒かかります')
 
 if buttonState:
     with st.spinner('実行中です。しばらくお待ちください。'):
@@ -243,4 +241,4 @@ if buttonState:
                 st.success('成功しました')
                 st.dataframe(df_disp)
                 st.write('物件一覧')
-                st.write(urlResult, unsafe_allow_html=True)
+                st.write(urlResult)
