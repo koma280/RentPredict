@@ -51,7 +51,7 @@ st.header('使用目的')
 st.write('使用時点の物件情報を検索し、割安物件を検索する')
 st.header('使用方法')
 st.write('左側のメニューバーから検索条件を設定し「予測」を実施する')
-st.header('予測対象URL')
+# st.header('予測対象URL')
 
 ##############################################################################
 # 管理費込み選択コントロール定義
@@ -205,7 +205,7 @@ urlgen.SetFloorPlan(mdlist)
 
 # URL作成
 urlResult = urlgen.Generate()
-st.write(urlResult)
+# st.write(urlResult)
 
 ##############################################################################
 # 実行コントロール定義
@@ -229,6 +229,7 @@ if buttonState:
 
         # 予測
         df_disp = Prediction(df, include)
+        
 
         ##############################################################################
         # 予測結果コントロール定義
@@ -236,4 +237,5 @@ if buttonState:
         if df_disp is None:
             st.warning('物件がありません')
         else:
+            st.markdown([物件一覧（suumo）](urlResult))
             st.dataframe(df_disp)
