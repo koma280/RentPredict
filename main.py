@@ -228,7 +228,9 @@ if buttonState:
             df = utl.ModifyFormat(df)
 
             # 予測
-            df_disp = Prediction(df, include)
+            #df_disp = Prediction(df, include)
+            df_disp = Prediction(df.to_html(escape=False))
+
 
 
             ##############################################################################
