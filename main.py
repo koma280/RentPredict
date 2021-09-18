@@ -206,10 +206,6 @@ urlgen.SetFloorPlan(mdlist)
 
 # URL作成
 urlResult = urlgen.Generate()
-"""
-[物件一覧](Link)
-[Link]: urlResult
-"""
 # st.write(urlResult)
 
 ##############################################################################
@@ -242,4 +238,5 @@ if buttonState:
         if df_disp is None:
             st.warning('物件がありません')
         else:
+            st.markdown([物件一覧]({{urlResult}}))
             st.dataframe(df_disp)
