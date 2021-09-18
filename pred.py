@@ -40,8 +40,10 @@ def Prediction(dataframe, model_flg):
 
         # 並べ替えして欲しい項目だけ取ってくる
         df_hyoji = df_joined.sort_values('割引率（符号あり）')
-        df_hyoji = df_hyoji[['物件名','住所','路線','駅','徒歩','建物区分','築年数','物件階','間取り','面積','予測賃料','実賃料','割引率','URL']]
+        df_hyoji['URL（表示用）'] = '<a href=' + df_hyoji['Url'] + '></a>'
+        df_hyoji = df_hyoji[['物件名','住所','路線','駅','徒歩','建物区分','築年数','物件階','間取り','面積','予測賃料','実賃料','割引率','URL（表示用）']]
+        df_html = df_hyoji.to_html(escape=False)
 
-        return df_hyoji
+        return df_html
     except:
         return None
