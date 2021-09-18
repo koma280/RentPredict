@@ -39,10 +39,10 @@ def Prediction(dataframe, model_flg):
         df_joined = dataframe.join(df_pred,how = 'inner',rsuffix = '_right')
 
         # 並べ替えして欲しい項目だけ取ってくる
-        df_hyoji = df_joined.sort_values('割引率（符号あり）')
-        #df_hyoji['URL（表示用）'] = '<a href=' + df_hyoji['URL'] + '></a>' linkで飛べるようにしたかったが、あきらめる
-        #df_hyoji = df_hyoji[['物件名','住所','路線','駅','徒歩','建物区分','築年数','物件階','間取り','面積','予測賃料','実賃料','割引率','URL']] URLありバージョン
-        df_hyoji = df_hyoji[['物件名','住所','路線','駅','徒歩','建物区分','築年数','物件階','間取り','面積','予測賃料','実賃料','割引率']]
+        df_sort = df_joined.sort_values('割引率（符号あり）')
+        #df_sort['URL（表示用）'] = '<a href=' + df_sort['URL'] + '></a>'   linkで飛べるようにしたかったが、あきらめる
+        #df_hyoji = df_sort[['物件名','住所','路線','駅','徒歩','建物区分','築年数','物件階','間取り','面積','予測賃料','実賃料','割引率','URL']] URLありバージョン
+        df_hyoji = df_sort[['物件名','住所','路線','駅','徒歩','建物区分','築年数','物件階','間取り','面積','予測賃料','実賃料','割引率']]
 
 
         return df_hyoji
