@@ -217,27 +217,29 @@ buttonState = st.sidebar.button(
 st.sidebar.write('予測には数秒かかります')
 
 if buttonState:
-    # 選択項目から読み込み対象のURLを取得
-    urlList = utl.CreateUrlList(urlResult)
+    with st.spinner('予測中です'):
+        # 選択項目から読み込み対象のURLを取得
+        urlList = utl.CreateUrlList(urlResult)
 
-    # スクレイピング
-    df = utl.ScrapingSuumo(urlList)
-    if df is None:
-        st.warning('物件がありません')
-    else:
-        # 前処理
-        df = utl.ModifyFormat(df)
-
-        # 予測
-        df_disp = Prediction(df, include)
-        
-
-        ##############################################################################
-        # 予測結果コントロール定義
-        ##############################################################################
-        if df_disp is None:
+        # スクレイピング
+        df = utl.ScrapingSuumo(urlList)
+        if df is None:
             st.warning('物件がありません')
         else:
-            st.dataframe(df_disp)
-            st.write('物件一覧')
-            st.write(urlResult)
+            # 前処理
+            df = utl.ModifyFormat(df)
+
+            # 予測
+            df_disp = Prediction(df, include)
+
+
+            ##############################################################################
+            # 予測結果コントロール定義
+            ##############################################################################
+            if df_disp is None:
+                st.warning('物件がありません')
+            else:
+                st.success('予測が成功しました')
+                st.dataframe(df_disp)
+                st.write('物件一覧')
+                st.write(urlResult)
