@@ -214,10 +214,10 @@ urlResult = urlgen.Generate()
 buttonState = st.sidebar.button(
     '予測'
 )
-st.sidebar.write('予測には数秒かかります')
+st.sidebar.write('予測には10秒かかります')
 
 if buttonState:
-    with st.spinner('予測中です'):
+    with st.spinner('実行中です。しばらくお待ちください。'):
         # 選択項目から読み込み対象のURLを取得
         urlList = utl.CreateUrlList(urlResult)
 
@@ -239,7 +239,7 @@ if buttonState:
             if df_disp is None:
                 st.warning('物件がありません')
             else:
-                st.success('予測が成功しました')
+                st.success('成功しました')
                 st.dataframe(df_disp)
                 st.write('物件一覧')
                 st.write(urlResult)
