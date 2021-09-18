@@ -207,8 +207,8 @@ urlgen.SetFloorPlan(mdlist)
 # URL作成
 urlResult = urlgen.Generate()
 """
-[物件一覧](urlResult#streamlit.write)
-urlResult
+[物件一覧](Link)
+[Link]: urlResult
 """
 # st.write(urlResult)
 
