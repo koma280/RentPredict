@@ -239,5 +239,6 @@ if buttonState:
         else:
             """
             [物件一覧](urlResult)
+            urlResult
             """
             st.dataframe(df_disp)
