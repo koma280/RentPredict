@@ -243,4 +243,4 @@ if buttonState:
                 st.success('成功しました')
                 st.dataframe(df_disp)
                 st.write('物件一覧')
-                st.write(urlResult)
+                st.write(urlResult, unsafe_allow_html=True)
